@@ -46,6 +46,7 @@ export default {
 					// End of file
 					rl.on('close', line => {
 						// Save to DB
+						this.$db.insert(document, (err, newDoc) => {})
 					})
 				})
 			})
