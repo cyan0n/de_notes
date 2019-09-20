@@ -19,9 +19,22 @@ export default {
 	padding: 0;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+	background-color: rgba(219, 219, 219, .9);
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+	background-color: gray;
+}
+
 body {
-	height: 100vh;
-	width: 100vw;
+	/*height: 100vh;
+	width: 100vw;*/
 	padding: 20px;
 	font-family: 'Source Sans Pro', sans-serif;
 	background:
