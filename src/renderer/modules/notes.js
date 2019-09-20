@@ -33,5 +33,8 @@ export default {
 			return result;
 		}
 		return false
-	}
+	},
+	transpose: (note, pitch) => {
+        return notes[Math.abs((note+pitch)%12)];
+    }
 }

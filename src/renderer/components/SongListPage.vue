@@ -3,7 +3,7 @@
 		<!-- Search -->
 		<!-- Songlist Select -->
 		<ul id="song-select">
-			<li v-for="(song, i) in song_list" :key="i" class="song-option">
+			<li v-for="(song, i) in song_list" :key="i" @click="$router.push('song/' + song._id)" class="song-option">
 				<span class="title">{{ song.title }}</span> <span class="artist">{{ song.artist }}</span>
 			</li>
 		</ul>
