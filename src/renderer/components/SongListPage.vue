@@ -7,7 +7,7 @@
 				<span class="title">{{ song.title }}</span> <span class="artist">{{ song.artist }}</span>
 			</li>
 		</ul>
-		<button>Migrate</button>
+		<button @click="$router.push('migration')">Migration</button>
 	</div>
 </template>
 
@@ -20,9 +20,6 @@ export default {
 		}
 	},
 	mounted() {
-
-	},
-	methods: {
 
 	}
 }

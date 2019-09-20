@@ -11,6 +11,11 @@ export default new Router({
       component: require('@/components/SongListPage').default
     },
     {
+      path: '/migration',
+      name: 'migration',
+      component: require('@/components/MigrationPage').default
+    },
+    {
       path: '*',
       redirect: '/'
     }
