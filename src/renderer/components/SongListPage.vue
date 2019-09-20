@@ -20,7 +20,13 @@ export default {
 		}
 	},
 	mounted() {
-
+		this.$db.find({}, (err, docs) => {
+			if (err) {
+				console.error(err)
+				return
+			}
+			this.song_list = docs
+		})
 	}
 }
 </script>
@@ -43,6 +49,8 @@ export default {
 		}
 		.artist {
 			color: gray;
+			margin-left: 5px;
+			font-size: .75em
 		}
 	}
 }
