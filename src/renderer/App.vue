@@ -29,4 +29,11 @@ body {
 			rgba(255, 255, 255, 1) 40%,
 			rgba(219, 219, 219, .9) 100%);
 }
+
+button {
+	padding: .5em .75em;
+	background-color: transparent;
+	border: 1px solid rgb(77, 187, 214);
+	border-radius: 8px;
+}
 </style>
