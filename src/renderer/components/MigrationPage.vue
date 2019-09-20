@@ -1,6 +1,9 @@
 <template>
 	<div>
-		<button @click="migrate">Migrate</button>
+		<button @click="migrate">Migrate</button><br>
+		<br>
+		<br>
+		<button @click="$router.push('/')">Back</button>
 	</div>
 </template>
 
@@ -8,6 +11,8 @@
 import fs from 'fs'
 import path from 'path'
 import readline from 'readline'
+
+import notes from '../modules/notes'
 
 export default {
 	name: 'migration',
@@ -40,7 +45,26 @@ export default {
 
 					// Read file lines
 					rl.on('line', line => {
+						let result = { type: 'empty' }
+
 						// Parse line as tablature/lyric/empty
+						let tabs = notes.parseTabs(line)
+
+						if (tabs) {
+							// Tablature
+							result = {
+								type: 'tablature',
+								tabs: tabs
+							}
+						} else if (line.trim() !== '') {
+							// Lyric
+							result = {
+								type: 'lyric',
+								lyric: line
+							}
+						}
+
+						document.lines.push(result)
 					})
 
 					// End of file
